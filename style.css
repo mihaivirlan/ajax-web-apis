@@ -2,3 +2,29 @@
     padding: 10px;
     border: 1px solid #eee;
 }
+
+.panel {
+    width: 25%;
+    display: inline-block;
+    height: 120px;
+
+}
+
+.panel img {
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.panel .content {
+    /* width: 100%; */
+    font-size: 0.7em;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    /* position: absolute; */
+    padding: 10px;
+    left: 0;
+    z-index: 100;
+}
