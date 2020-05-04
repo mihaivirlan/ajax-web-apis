@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>AJAX APIs</title>
 </head>
 <body>
@@ -18,8 +19,14 @@
         function showResults() {
             var searchTerm = document.querySelector('input[name="searchTerm"]').value;
             var url = 'https://en.wikipedia.org/w/api.php?format=json&action=opensearch&origin=*&search=' + searchTerm;
+            var output = document.querySelector('#output');
+            output.innerHTML = "<h2>Search Term" + searchTerm + "<h2>";
             ajaxJS(url, function(response) {
-                console.log(response);
+                for(var x in response) {
+                    var holder = typeof response[x] == 'string' ? response[x] : response[x][0];
+                    output.innerHTML += '<div class="dataOutput">' + holder + '</div>'
+                    //console.log(holder);
+                }
             })
         }
 
